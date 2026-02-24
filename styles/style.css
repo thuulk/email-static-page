@@ -66,6 +66,19 @@
     font-weight: bold;
     cursor: pointer;
     margin-bottom: 20px;
+    border-radius: 5px; /* Agregado para estética */
+    transition: all 0.3s ease; /* Feature: Transición suave para la animación */
+}
+
+/* Feature: Efectos hover y active para el botón Redactar */
+.btn-compose:hover {
+    background: #333;
+    transform: scale(1.05); /* El botón crece ligeramente */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn-compose:active {
+    transform: scale(0.95); /* Efecto de hundimiento al hacer clic */
 }
 
 .nav-links {
@@ -73,9 +86,18 @@
 }
 
 .nav-links li {
-    padding: 8px 0;
+    padding: 8px 10px; /* Ajuste de padding para mejor área de clic */
     cursor: pointer;
     font-weight: bold;
+    border-radius: 4px;
+    transition: all 0.3s ease; /* Feature: Transición suave para el menú */
+}
+
+/* Feature: Animación para el menú de navegación al pasar el cursor */
+.nav-links li:hover {
+    background-color: #f0f0f0;
+    transform: translateX(8px); /* Desplaza el texto a la derecha */
+    color: #0056b3;
 }
 
 .nav-links hr {
@@ -97,6 +119,12 @@
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    transition: background-color 0.2s ease; /* Feature: Transición de color de fondo */
+}
+
+/* Feature: Efecto visual al pasar el ratón sobre un correo */
+.email-item:hover {
+    background-color: #f4f4f4;
 }
 
 .email-item .sender {
@@ -117,4 +145,58 @@
     justify-content: center;
     color: #333;
     background-color: #fff;
+}
+
+/* =========================================
+   MEDIA QUERIES (Responsividad)
+   ========================================= */
+
+/* Vista de Tablet (Pantallas menores a 992px) */
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 150px; /* Reducimos el ancho del menú */
+    }
+    
+    .email-list {
+        width: 250px; /* Reducimos el ancho de la lista de correos */
+    }
+    
+    .search-container input {
+        width: 80%; /* Hacemos la barra de búsqueda más flexible */
+    }
+}
+
+/* Display para celulares (Pantallas menores a 768px) */
+@media screen and (max-width: 768px) {
+    
+    .top-bar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .search-container {
+        order: 3; /* Mandamos la búsqueda abajo del logo y el perfil */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .search-container input {
+        width: 100%;
+    }
+
+    /* Ocultamos elementos que no caben en celular */
+    .sidebar {
+        display: none; 
+    }
+
+    .email-view {
+        display: none; 
+    }
+
+    /* La lista de correos toma el 100% de la pantalla */
+    .email-list {
+        width: 100%;
+        border-right: none;
+    }
 }
