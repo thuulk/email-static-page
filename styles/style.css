@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+    height: 60px;
+}
+
+.logo {
+    font-weight: bold;
+    width: 150px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 60%;
+    padding: 8px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 4px;
+}
+
+.user-profile {
+    background-color: #a2d2d2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Contenedor Principal */
+.app-container {
+    display: flex;
+    height: calc(100vh - 60px); /* Resta la altura del header */
+}
+
+/* Columna 1: Sidebar */
+.sidebar {
+    width: 180px;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+}
+
+.btn-compose {
+    background: black;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 8px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-links hr {
+    margin: 10px 0;
+    border: 0;
+    border-top: 1px solid #ccc;
+}
+
+/* Columna 2: Lista de correos */
+.email-list {
+    width: 300px;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.email-item {
+    padding: 20px 15px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.email-item .sender {
+    font-weight: bold;
+}
+
+.email-item .subject {
+    color: #333;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* Columna 3: Vista de lectura */
+.email-view {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    background-color: #fff;
+}
